@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// MAIN //!MODO LOCAL TEST
+//! MAIN // MODO LOCAL TEST //
 
 //import 'package:flutter/cupertino.dart';
 //import 'package:flutter/material.dart';
@@ -24,8 +24,8 @@ import 'package:flutter/services.dart';
 // }
 
 class CadastroUsuario extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
-  final nomeController = TextEditingController();
+  final _formKey = GlobalKey<FormState>(); 
+  final nomeController = TextEditingController(); //! hacer validaciones de todos los campos del formulario. estudiar
   
   @override
   Widget build(BuildContext context) {
@@ -44,10 +44,9 @@ class CadastroUsuario extends StatelessWidget {
                 ),
                 Container(
                   child: Text(
-                    //! Vamos começar!
                     'Vamos começar!',
                     style: TextStyle(
-                      fontFamily: 'Montserrat-SemiBold',
+                      fontFamily: 'Montserrat-SemiBold', //! usar fuente lovepeople
                       color: Colors.white.withOpacity(1),
                       fontSize: 25,
                     ),
@@ -59,7 +58,6 @@ class CadastroUsuario extends StatelessWidget {
                 Container(
                   height: 38,
                   child: TextFormField(
-                    //! Nome
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white.withOpacity(1),
@@ -91,7 +89,6 @@ class CadastroUsuario extends StatelessWidget {
                 Container(
                   height: 38,                  
                   child: TextFormField(
-                    //! Número de telefone, email ou CPF
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white.withOpacity(1),
@@ -122,7 +119,6 @@ class CadastroUsuario extends StatelessWidget {
                 Container(
                   height: 38,                              
                   child: TextFormField(
-                    //! Senha
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white.withOpacity(1),
@@ -137,7 +133,7 @@ class CadastroUsuario extends StatelessWidget {
                         fontSize: 16,
                         height: 2.8,                           
                       ),
-                      suffixIcon: Icon(Icons.remove_red_eye),
+                      suffixIcon: Icon(Icons.remove_red_eye), //! cambiar ojo padron por icono lovepeople
                     ),
                     autofocus: true,
                     keyboardType: TextInputType.text,
@@ -155,8 +151,7 @@ class CadastroUsuario extends StatelessWidget {
                 ),
                 Container(
                   height: 38,                        
-                  child: TextFormField(
-                    //! Confirmar senha               
+                  child: TextFormField(       
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white.withOpacity(1),
@@ -165,7 +160,7 @@ class CadastroUsuario extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Confirmar senha',
-                      suffixIcon: Icon(Icons.remove_red_eye),
+                      suffixIcon: Icon(Icons.remove_red_eye),//! cambiar ojo padron por icono lovepeople
                       hintStyle: TextStyle(
                         fontFamily: 'Montserrat-SemiBold',
                         color: Color(0xFF3101B9),
@@ -188,12 +183,9 @@ class CadastroUsuario extends StatelessWidget {
                   height: 30,
                 ),
                 Container(
-                  child: ElevatedButton(//! Cadastrar
+                  child: ElevatedButton(
                     onPressed: () {
-//                    if (_formKey.currentState.validate()) {
-//                      _formKey.currentState.save();
                         cadastrar();
-//                    }
                     },
                     child: Text(
                       'Cadastrar',
@@ -218,7 +210,7 @@ class CadastroUsuario extends StatelessWidget {
                 SizedBox(
                   height: 150,
                 ),
-                Container(
+                Container( //! usar un widget. buscar.
                   child: Text(
                     '.................................................................................',
                     style: TextStyle(
@@ -229,14 +221,13 @@ class CadastroUsuario extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  //!Já possui cadastro? Entrar
-                  child: GestureDetector(
+                Container(//! colocar en una Row(). estudiar
+                  child: GestureDetector(//! no. estudiar
                     onTap: () {
                       jaPossuiCadastro();
                     },
-                    child: Text( //? colocar en una Row()??
-                      'Já possui cadastro? Entrar',
+                    child: Text( 
+                      'Já possui cadastro? Entrar', //! cambiar colores
                       style: TextStyle(
                         fontFamily: 'Montserrat-SemiBold',                        
                         color: Colors.white.withOpacity(1),
@@ -244,7 +235,7 @@ class CadastroUsuario extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),           
+                ),
               ],
             ),
           ),
@@ -253,7 +244,7 @@ class CadastroUsuario extends StatelessWidget {
     );
   }
 
-  void cadastrar() {
+  void cadastrar() { 
     // Navigator.of(context).push(
     //   MaterialPageRoute(
     //     builder: (context) => tela_sucesso_cadastro(),
